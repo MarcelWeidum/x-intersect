@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./build/tailwind.css">
+</head>
+<body class="min-h-screen min-w-screen bg-gray-50">
+    <div x-data="{}" class="container mx-auto mt-12">
+        <h1 class="font-bold text-4xl">Happatee</h1>
+
+        <template x-for="i in 10">
+            <div x-data="{ showImage: false }" x-intersect="showImage = true" class="mt-32 mb-64">
+                <img x-bind:src="showImage ? `https://source.unsplash.com/collection/${i}` : ''" alt="joe">
+            </div>
+        </template>
+    </div>
+
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
